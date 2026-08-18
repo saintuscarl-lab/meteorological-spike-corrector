@@ -7,7 +7,8 @@ Un pipeline modulaire en C99 d'assurance qualité et de traitement automatique d
 ![Memory Safety](https://img.shields.io/badge/Valgrind-0%20Leaks-brightgreen.svg)
 ![Tests](https://img.shields.io/badge/Tests-CUnit%20%2B%20Bats%20Passing-success.svg)
 ![License](https://img.shields.io/badge/License-MIT-lightgrey.svg)
-![CI](https://github.com/saintuscarl@gmail.com/weather-qc-pipeline/actions/workflows/ci.yml/badge.svg)
+[![CI](https://github.com/saintuscarl-lab/meteorological-spike-corrector/actions/workflows/ci.yml/badge.svg)](https://github.com/saintuscarl-lab/meteorological-spike-corrector/actions/workflows/ci.yml)
+
 
 ---
 
