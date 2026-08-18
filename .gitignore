@@ -1,0 +1,24 @@
+# Exécutables
+weather_qc
+test_*
+*.out
+
+# Fichiers objets et bibliothèques
+*.o
+*.a
+*.so
+
+# Rapports de couverture gcov / lcov
+*.gcda
+*.gcno
+*.gcov
+coverage/
+coverage.info
+
+# Fichiers de sortie générés lors des tests
+data/output/*.txt
+!data/output/.gitkeep
+
+# Documentation générée
+*.html
+

@@ -1,0 +1,2 @@
+fcst_sys_id  abacus_id  loc_id  run_date   lead_time  prdr_value
+-1           6          633     2461124.5  8.0        271.39542

@@ -1,0 +1,44 @@
+forecast:
+  # ========== PARAMÈTRES D'ENTRÉE/SORTIE ==========
+  input:
+    forecast_in: "data/forecasts/2026032500_012.txt"
+    obs_db_path: "data/obs/obs.txt"
+    predictors_base_dir: "data/predictors/prdr_runs/"
+    forecast_base_dir: "data/forecasts/mix_sqlite"
+
+  # ========== CONTRÔLES ACTIVÉS ==========
+  validation:
+    min_max_enabled: true
+    temporal_spike_detection_enabled: true
+    inter_variable_enabled: true
+
+  # ========== VALIDATION MIN/MAX PAR VARIABLE ==========
+  min_max:
+    TT:  # Température (elem_id 6)
+      min: 203      # -70°C en Kelvin
+      max: 333      # +60°C en Kelvin
+    TD:  # Point de rosée (elem_id 7)
+      min: 203      # -70°C en Kelvin
+      max: 308      # +35°C en Kelvin
+
+  # ========== DÉTECTION DE SPIKES TEMPORELS ==========
+  temporal_spike:
+    enabled: true
+    max_distance: 3  # Heures (distance maximale pour chercher les voisins)
+    file_interval: 6  # Intervalle entre les fichiers de prévisions (heures)
+
+    # Seuils adaptatifs basés sur la distance temporelle
+    adaptive_thresholds:
+      distance_1h: 30    # °K pour distance 1h
+      distance_2h: 28    # °K pour distance 2h
+      distance_3h_plus: 27  # °K pour distance 3h+
+
+    # Options
+    use_predictors: true                # Utiliser les prédicteurs pour corriger
+    use_observation_validation: true    # Valider T+00 contre les observations (CAS 2a)
+    use_previous_files: true            # Chercher dans les fichiers précédents (CAS 2b)
+
+  # ========== VALIDATION INTER-VARIABLE ==========
+  inter_variable:
+    td_le_tt_enabled: true  # Assurer que TD ≤ TT 
+    

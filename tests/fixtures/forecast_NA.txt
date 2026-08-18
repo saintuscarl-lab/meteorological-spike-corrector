@@ -1,0 +1,4 @@
+fcst_sys_id  stn_id  loc_id  stat_method_id  elem_id  run_date   lead_time  prdn_value
+-1           1704    633     10              6        2461124.5  8.0        992.41
+-1           1704    633     10              6        2461124.5  12.0       330.06
+-1           1704    633     10              6        2461124.5  10.0       271.13

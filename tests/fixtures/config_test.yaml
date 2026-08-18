@@ -1,0 +1,36 @@
+forecast:
+  input:
+    forecast_in: "tests/fixtures/forecast_simple.txt"
+    obs_db_path: "tests/fixtures/obs_test.txt"
+    predictors_base_dir: "tests/fixtures/predictors/"
+    forecast_base_dir: "tests/fixtures/mix_sqlite"
+
+  validation:
+    min_max_enabled: true
+    temporal_spike_detection_enabled: true
+    inter_variable_enabled: true
+
+  min_max:
+    TT:
+      min: 203
+      max: 333
+    TD:
+      min: 203
+      max: 308
+
+  temporal_spike:
+    enabled: true
+    max_distance: 3
+    file_interval: 6
+
+    adaptive_thresholds:
+      distance_1h: 30
+      distance_2h: 28
+      distance_3h_plus: 27
+
+    use_predictors: true
+    use_observation_validation: true
+    use_previous_files: true
+
+  inter_variable:
+    td_le_tt_enabled: true
